@@ -15,7 +15,7 @@ export default {
 
     <section class="container">
         <div class="content d-flex py-5">
-                <!-- parte sinistra con la info -->
+
                 <div class="info py-5 ps-2 pe-5">
                     <h4 class="upper">Everything in <span class="fw-bold">Maxcoach</span></h4>
                     <h2>Learn about our<span> Work Culture</span> at MaxCoach</h2>
@@ -23,17 +23,15 @@ export default {
                         Spend some time to visit our website or head office and discover our current courses, 
                         enrollment procedure, and registration deadline. We're opening new classes every beginning of each month. 
                     </p>
-                    <!-- bottone -->
+
                     <div>
                         <button class="btn">
                             Have questions? <span class="fw-bold">Get Free Guide <i class="fa-solid fa-arrow-right-long"></i></span> 
                         </button>
                     </div>
-                    <!-- /bottone -->
-                </div>
-                <!-- /parte sinistra con le info -->
 
-                <!-- parte destra con foto -->
+                </div>
+
                 <div class="box-img">
 
                     <img class="on-right" src="../../../public/about-us-01-ohkia3qg98rq9vg3s0mn2hkflr1migdqdw370qnegc.jpg" alt="Everything on Max Coach"/>
@@ -49,7 +47,6 @@ export default {
                     <img class="bottom-right" src="../../../public/maxcoach-shape-02.png" alt="shape2">
                 </div>
 
-                <!-- /parte destra con foto -->
         </div>
     </section>
 
