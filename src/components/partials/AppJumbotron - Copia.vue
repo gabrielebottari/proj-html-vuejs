@@ -1,15 +1,10 @@
 <script>
-import Jumbotron from "./partials/AppJumbotron.vue";
-
 export default {
     data() {
         return {
 
         };
     },
-    components: {
-    Jumbotron,
-  },
     methods: {
 
     }
@@ -18,7 +13,7 @@ export default {
 
 <template>
     <main>
-        <Jumbotron></Jumbotron>
+        MAIN
     </main>
 </template>
 
