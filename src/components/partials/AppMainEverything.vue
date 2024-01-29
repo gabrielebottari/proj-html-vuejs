@@ -17,7 +17,7 @@ export default {
         <div class="content d-flex py-5">
 
                 <div class="info py-5 ps-2 pe-5">
-                    <h4 class="upper">Everything in <span class="fw-bold">Maxcoach</span></h4>
+                    <h4 class="text-uppercase">Everything in <span class="fw-bold">Maxcoach</span></h4>
                     <h2>Learn about our<span> Work Culture</span> at MaxCoach</h2>
                     <p class="py-4">
                         Spend some time to visit our website or head office and discover our current courses, 
