@@ -1,5 +1,6 @@
 <script>
 import Jumbotron from "./partials/AppJumbotron.vue";
+import MainEverything from "./partials/AppMainEverything.vue";
 
 export default {
     data() {
@@ -9,6 +10,8 @@ export default {
     },
     components: {
     Jumbotron,
+    MainEverything,
+
   },
     methods: {
 
@@ -19,6 +22,7 @@ export default {
 <template>
     <main>
         <Jumbotron></Jumbotron>
+        <MainEverything></MainEverything>
     </main>
 </template>
 
