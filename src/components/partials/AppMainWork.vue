@@ -84,6 +84,13 @@ export default {
                 }
             }
 
+            button {
+                span {
+                    padding-bottom: 3px;
+                    border-bottom: 1px solid lightgray;
+                }
+            }
+
         }
 
 
