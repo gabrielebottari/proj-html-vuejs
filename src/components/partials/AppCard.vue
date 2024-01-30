@@ -62,7 +62,6 @@ export default {
 @use "../../assets/scss/partials/reset.scss" as*;
 
 .card {
-  width: calc((100% - 50px) / 3);
   border-radius: 5px;
   overflow: hidden;
   background-color: white;

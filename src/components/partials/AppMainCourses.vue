@@ -60,135 +60,158 @@ export default {
     },
     methods: {
         setCurrentIndex(selectedIndex) {
-    // Calculate the starting index of the set of three cards
-    this.currentIndex = Math.floor(selectedIndex / 3) * 3;
-  },
+      const totalCards = this.cardsData.length;
+      this.currentIndex = selectedIndex % totalCards;
+    },
     },
     computed: {
         visibleCards() {
-    const cardsToShow = 3;
-    return this.cardsData.slice(this.currentIndex, this.currentIndex + cardsToShow);
+      const cardsToShow = 3;
+      let cards = [];
+      for (let i = 0; i < cardsToShow; i++) {
+        let index = (this.currentIndex + i) % this.cardsData.length;
+        cards.push(this.cardsData[index]);
+      }
+      return cards;
+    },
+
   },
-},
+
 };
 </script>
 
 <template>
-  <section>
-    <div class="container">
-      <h4 class="upper">join maxcoach at best</h4>
-      <h2>Latest Online <span>Courses</span></h2>
-      <!-- contenitore card -->
-      <div class="cards flex">
-  <Card
-    v-for="(cardData, index) in visibleCards"
-    :card="cardData"
-    :key="cardData.id"
-  />
-</div>
-      <!-- /contenitore card -->
-      <!-- puntini stile slider sotto le card -->
-      <div class="thumbs d-flex">
-  <button
-    v-for="(cardData, index) in cardsData"  
-    :key="index"
-    type="button"
-    @click="setCurrentIndex(index)"
-    class="thumb"
-  ></button>
-</div>
-      <!-- /puntini stile slider sotto le card -->
-      <!-- testo con link sotto i puntini -->
-      <div class="all-courses">
-        Control your personal preference settings to get notified about
-        appropriate courses.
-        <a href="#">
-          View all courses
-          <i class="fa-solid fa-arrow-right-long"></i>
-        </a>
-      </div>
-      <!-- /testo con link sotto i puntini -->
-    </div>
-  </section>
+    <section>
+        <div class="bg-container">
+            <div class="container">
+            <h4 class="text-uppercase text-center">join maxcoach at best</h4>
+            <h2 class="text-center">Latest Online <span>Courses</span></h2>
+
+                <div class="cards flex p-3">
+                    <Card
+                        v-for="(cardData, index) in visibleCards"
+                        :card="cardData"
+                        :key="index"
+                    />
+                </div>
+
+                <div class="thumbs d-flex">
+                <button
+                    v-for="(cardData, index) in cardsData"  
+                    :key="index"
+                    type="button"
+                    @click="setCurrentIndex(index)"
+                    :class="['thumb', { active: currentIndex === index }]"
+                ></button>
+                </div>
+
+                <p class="text-center pt-4">
+                Control your personal preference settings to get notified about
+                appropriate courses.
+                <a href="#">
+                    View all courses
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+                </p>
+                
+            </div>
+            <img src="../../../public/svg-1.svg" alt="svg">
+        </div>
+    </section>
 </template>
 
 <style scoped lang="scss">
 @use "../../assets/scss/partials/variables.scss" as *;
 @use "../../assets/scss/partials/reset.scss" as*;
 
+.bg-container {
+    background-color: #F5F7FA;
 
-h4 {
-  font-size: 14px;
 
-  margin-bottom: 15px;
-  font-weight: lighter;
-  text-align: center;
-}
-h2 {
+    h4 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
 
-  font-size: 34px;
-  text-align: center;
-  margin-bottom: 50px;
-  span {
+    }
+    h2 {
 
-    font-weight: lighter;
+    font-size: 50px;
+    margin-bottom: 50px;
+    span {
+        font-weight: 400;
+        color: $overGreen;
+    }
+    }
+
+    .cards {
+    display: flex;
+    overflow: hidden; // Hide the overflowed content
+    gap: 50px;
+    margin: 0 50px;
+
+    .card {
+        flex: 0 0 30%; // Each card takes up a third of the container
+        // Add other styling as needed
+        height: 450px;
+        width: 300px;
+    }
+    }
+
+/*
+.cards-slider {
+  overflow: hidden;
+  width: 100%;
+
+  .cards-container {
+    display: flex;
+    //transition: transform 0.5s ease-in-out;
+
+
+    .card {
+
+        flex: 0 0 33.33%; // Each card takes up one-third of the container width :style="{ 'transform': `translateX(-${currentIndex * 100 / 3}%)` }"
+    }
   }
 }
+*/
+    .thumbs {
+    margin-top: 25px;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    .thumb {
+        width: 8px;
+        height: 8px;
+        background-color: #d8d8d8;
+        border-radius: 50%;
 
-.cards {
-  display: flex;
-  overflow: hidden; // Hide the overflowed content
+        &.active {
+        width: 12px;
+        height: 12px;
+        background-color: black;
+        border-radius: 50%;
+        }
+    }
+    }
+    p {
+        margin: 0 auto;    
+        width: 50%;
+        line-height: 1.5;
+        color: $darkGrey;
+        font-size: 20px;
+        a {
+            border-bottom: 1px solid lightgray;
+            padding-bottom: 2px;
+            font-weight: 600;
+            color: black;
+        }
+    }
 
-  .card {
-    flex: 0 0 33.33%; // Each card takes up a third of the container
-    // Add other styling as needed
-  }
-}
-.thumbs {
-  margin-top: 25px;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  .thumb {
-    width: 8px;
-    height: 8px;
-    background-color: #d8d8d8;
-    border-radius: 50%;
-  }
-  .thumb:first-child {
-    width: 12px;
-    height: 12px;
-    background-color: black;
-    border-radius: 50%;
-  }
-}
-.all-courses {
-  width: 45%;
-  margin: 0 auto;
-  margin-top: 40px;
-  font-size: 14px;
-  text-align: center;
-  line-height: 1.5;
-  a {
-    border-bottom: 1px solid black;
-    padding-bottom: 1px;
-    font-weight: bold;
-  }
-}
-section {
-  background-image: linear-gradient(white, #f6f6f6);
-  position: relative;
-  padding-bottom: 80px;
-  // onda nella parte bassa della sezione
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100px;
-    display: block;
-    position: absolute;
-    background-color: #f6f6f6;
-    border-radius: 100%;
-    bottom: -50px;
-  }
+    img {
+        width: 100%;
+        filter: invert(98%) sepia(13%) saturate(250%) hue-rotate(244deg) brightness(116%) contrast(100%);
+    }
 }
 </style>
