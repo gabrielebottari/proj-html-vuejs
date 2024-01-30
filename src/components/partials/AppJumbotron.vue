@@ -1,9 +1,15 @@
 <script>
+import Sidemenu from "./AppMainSidemenu.vue"
+    
+
 export default {
     data() {
         return {
 
         };
+    },
+    components: {
+        Sidemenu,
     },
     methods: {
 
@@ -22,6 +28,8 @@ export default {
                         Download free guidebook <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
+                <Sidemenu class="sidemenu" />
+
             </div>
     </section>
 
@@ -36,22 +44,37 @@ section {
     background-size: cover;
     height: 700px;
 
+    div{
+        position: relative;
+    
+
     h1{
         font-size: 4em;
     }
 
-    button {
-        
+    button {        
         font-size: 15px;
         font-weight: 700;
         color: $overGreen;
         &:hover {
-        background-color: $overGreen;
-        transition: ease-in-out 0.3s;
-        color: white;
+            background-color: $overGreen;
+            transition: ease-in-out 0.3s;
+            color: white;
         }
 
     }
+
+        .sidemenu{
+            position: fixed;
+            right: 0;
+            top: 20%;
+            z-index: 1;
+            -webkit-box-shadow: -10px 13px 26px -11px rgba(66, 68, 90, 1);
+            -moz-box-shadow: -10px 13px 26px -11px rgba(66, 68, 90, 1);
+            box-shadow: -10px 13px 26px -11px rgba(66, 68, 90, 1);
+        }
+    }
+    
 
 }
 

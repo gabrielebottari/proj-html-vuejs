@@ -123,6 +123,7 @@ export default {
             position: absolute;
             bottom: 70px;
             right: 60px;
+            z-index: -1;
 
         }
 
@@ -149,7 +150,7 @@ export default {
                 .inner-circle {
                 width: 60px; /* Diameter of the inner circle (hollow part) */
                 height: 60px; /* Same as width for perfect circle */
-                background-color: $bgContainer; /* Match to surrounding background for hollow effect */
+                background-color: white; /* Match to surrounding background for hollow effect */
                 border-radius: 50%; /* Makes the div a circle */
                 }
             }
