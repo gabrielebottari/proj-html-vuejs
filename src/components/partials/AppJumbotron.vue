@@ -11,6 +11,7 @@ export default {
     components: {
         Sidemenu,
     },
+
     methods: {
 
     }
@@ -28,7 +29,7 @@ export default {
                         Download free guidebook <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
-                <Sidemenu class="sidemenu" />
+                <Sidemenu/>
 
             </div>
     </section>
@@ -64,15 +65,6 @@ section {
 
     }
 
-        .sidemenu{
-            position: fixed;
-            right: 0;
-            top: 20%;
-            z-index: 1;
-            -webkit-box-shadow: -10px 13px 26px -11px rgba(66, 68, 90, 1);
-            -moz-box-shadow: -10px 13px 26px -11px rgba(66, 68, 90, 1);
-            box-shadow: -10px 13px 26px -11px rgba(66, 68, 90, 1);
-        }
     }
     
 

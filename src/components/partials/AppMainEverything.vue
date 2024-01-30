@@ -15,7 +15,7 @@ export default {
 
     <div class="bg-container">
         <section class="container">
-            <div class="content d-flex py-5">
+            <div class="content d-flex pt-5 pb-3">
 
                     <div class="info py-5 ps-2 pe-5">
                         <h4 class="text-uppercase">Everything in <span class="fw-bold">Maxcoach</span></h4>

@@ -19,11 +19,14 @@ export default {
             <div class="content d-flex p-5">
                 <!-- parte sinistra con foto -->
                 <div class="box-img">
-                    <img src="../../../public/stock-full-hd-11-670x450.jpg" alt="About-us"/>
-                    <!-- logo youtube-->
-                    <div class="yt">
-                        <img src="../../../public/icon-youtube-play.png" alt="How we work"/>
+                    <div class="video-box">
+                        <img src="../../../public/stock-full-hd-11-670x450.jpg" alt="About-us"/>
+                        <!-- logo youtube-->
+                        <div class="yt">
+                            <img src="../../../public/icon-youtube-play.png" alt="How we work"/>
+                        </div>
                     </div>
+
 
                     <img class="mid-left" src="../../../public/maxcoach-shape-05-150x150.png" alt="shape8">
                     <img class="bottom-right" src="../../../public/maxcoach-shape-07-150x150.png" alt="shape7">
@@ -107,19 +110,35 @@ export default {
             .box-img {
             position: relative;
             width: 55%;
-                > img {
+
+            .video-box {
                 width: 100%;
-                display: block;
-                border-radius: 5px;
+                overflow: hidden; // Impedisce all'immagine ingrandita di fuoriuscire dal contenitore
+                border-radius: 5px; // Mantiene il bordo arrotondato
+                img {
+                    width: 100%;
+                    display: block;
+                    transition: transform 0.5s ease; // Transizione fluida per l'effetto di zoom
+                    &:hover {
+                        transform: scale(1.1); // Effetto di zoom
+                    }
                 }
+            }
+
+
+
+                
                 // logo youtube
                 .yt {
                 width: 100px;
                 position: absolute;
-                top: 50%;
+                top: 40%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 }
+
+                }
+
 
                 
                 .top-left {
@@ -178,7 +197,7 @@ export default {
 
         }
     }
-}
+
 
 
 </style>
