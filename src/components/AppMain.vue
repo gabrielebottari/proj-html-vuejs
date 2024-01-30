@@ -6,6 +6,7 @@ import MainWork from "./partials/AppMainWork.vue";
 import MainCourses from "./partials/AppMainCourses.vue";
 import MainTestimonials from "./partials/AppMainTestimonials.vue";
 import MainTransform from "./partials/AppMainTransform.vue";
+import MainBlogs from "./partials/AppMainBlogs.vue";
 
 export default {
     data() {
@@ -21,6 +22,7 @@ export default {
     MainCourses,
     MainTestimonials,
     MainTransform,
+    MainBlogs,
 
   },
     methods: {
@@ -38,6 +40,7 @@ export default {
         <MainCourses></MainCourses>
         <MainTestimonials></MainTestimonials>
         <MainTransform></MainTransform>
+        <MainBlogs></MainBlogs>
     </main>
 </template>
 
