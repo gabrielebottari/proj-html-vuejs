@@ -29,7 +29,7 @@ export default {
         alt="foto che rappresenta uno dei corsi di questo sito"
       />
       <!-- tag free -->
-      <div class="tag upper" v-show="card.free">free</div>
+      <div class="tag text-uppercase" v-show="card.free"><span class="ps-2">free</span></div>
       <!-- /tag free -->
     </div>
     <!-- /immagine -->
@@ -37,7 +37,7 @@ export default {
     <div class="box-info">
       <!-- costo del corso -->
       <div class="cost">
-        <span>{{ card.cost1 }}</span>
+        <span class="fs-3">{{ card.cost1 }}</span>
         <span>{{ card.cost2 }}</span>
       </div>
       <!-- /costo del corso -->
@@ -66,6 +66,12 @@ export default {
   overflow: hidden;
   background-color: white;
   cursor: pointer;
+  border: none;
+  &:hover {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
+  }
   .box-img {
     position: relative;
     .tag {
@@ -73,18 +79,23 @@ export default {
       top: 0;
       right: 0;
       color: white;
-      padding: 0px 10px;
-      font-size: 14px;
-      height: 24px;
-      line-height: 24px;
+      background-color: orangered;
+      padding: 3px 20px;
+      font-size: 20px;
+      font-weight: 600;
+      opacity: 0.5;
       &::after {
-        content: "";
-        border-left: 14px solid transparent;
-        display: block;
-        position: absolute;
-        top: 0px;
-        left: -12px;
-      }
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
     }
   }
   img {
@@ -102,17 +113,18 @@ export default {
 
 
     h4 {
-      font-size: 16px;
+      font-size: 20px;
       line-height: 1.5;
       margin-top: 15px;
       margin-bottom: 25px;
+      padding: 5px 0;
       &.hover {
         color: $overGreen;
       }
     }
     .lessons {
       margin-right: 25px;
-      font-size: 13px;
+      font-size: 15px;
       & > * {
         margin-right: 7px;
       }

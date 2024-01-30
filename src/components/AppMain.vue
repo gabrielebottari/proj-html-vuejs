@@ -3,7 +3,8 @@ import Jumbotron from "./partials/AppJumbotron.vue";
 import MainEverything from "./partials/AppMainEverything.vue";
 import MainSatisfaction from "./partials/AppMainSatisfaction.vue";
 import MainWork from "./partials/AppMainWork.vue";
-import MainCourses from "./partials/AppMainCourses.vue"
+import MainCourses from "./partials/AppMainCourses.vue";
+import MainTestimonials from "./partials/AppMainTestimonials.vue";
 
 export default {
     data() {
@@ -17,6 +18,7 @@ export default {
     MainSatisfaction,
     MainWork,
     MainCourses,
+    MainTestimonials,
 
   },
     methods: {
@@ -32,6 +34,7 @@ export default {
         <MainSatisfaction></MainSatisfaction>
         <MainWork></MainWork>
         <MainCourses></MainCourses>
+        <MainTestimonials></MainTestimonials>
     </main>
 </template>
 

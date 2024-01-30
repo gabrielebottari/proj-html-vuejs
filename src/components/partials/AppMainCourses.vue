@@ -125,7 +125,7 @@ export default {
 @use "../../assets/scss/partials/reset.scss" as*;
 
 .bg-container {
-    background-color: #F5F7FA;
+    background-image: linear-gradient(white, $bgContainer);
 
 
     h4 {
@@ -147,35 +147,17 @@ export default {
 
     .cards {
     display: flex;
-    overflow: hidden; // Hide the overflowed content
+    overflow: hidden;
     gap: 50px;
     margin: 0 50px;
 
     .card {
-        flex: 0 0 30%; // Each card takes up a third of the container
-        // Add other styling as needed
+        flex: 0 0 30%;
         height: 450px;
         width: 300px;
     }
     }
 
-/*
-.cards-slider {
-  overflow: hidden;
-  width: 100%;
-
-  .cards-container {
-    display: flex;
-    //transition: transform 0.5s ease-in-out;
-
-
-    .card {
-
-        flex: 0 0 33.33%; // Each card takes up one-third of the container width :style="{ 'transform': `translateX(-${currentIndex * 100 / 3}%)` }"
-    }
-  }
-}
-*/
     .thumbs {
     margin-top: 25px;
     align-items: center;
@@ -211,6 +193,7 @@ export default {
 
     img {
         width: 100%;
+        height: 100px;
         filter: invert(98%) sepia(13%) saturate(250%) hue-rotate(244deg) brightness(116%) contrast(100%);
     }
 }

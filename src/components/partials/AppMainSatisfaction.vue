@@ -27,19 +27,23 @@ export default {
 
 <template>
 
-    <section class="container">
+    <div class="bg-container">
 
-        <div class="row">
+        <section class="container">
 
-            <div class="col-4 text-center" v-for="stat in stats">
-                <h3 class="fw-bold py-2">{{ stat.number }}</h3>
-                <h6 class="text-uppercase">{{ stat.text }}</h6>
+            <div class="row">
+
+                <div class="col-4 text-center" v-for="stat in stats">
+                    <h3 class="fw-bold py-2">{{ stat.number }}</h3>
+                    <h6 class="text-uppercase">{{ stat.text }}</h6>
+                </div>
+
+
             </div>
 
+        </section>
 
-        </div>
-
-    </section>
+    </div>
 
 </template>
 
@@ -47,14 +51,16 @@ export default {
 @use "../../assets/scss/partials/variables.scss" as *;
 @use "../../assets/scss/partials/reset.scss" as*;
 
-    h3 {
-        color: $overGreen;
-        font-size: 3em;
-    }
+    .bg-container {
 
-    h6 {
-        color: $darkGrey;
-    }
+            h3 {
+            color: $overGreen;
+            font-size: 3em;
+        }
 
+        h6 {
+            color: $darkGrey;
+        }
+    }
 
 </style>
