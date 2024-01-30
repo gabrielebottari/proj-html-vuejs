@@ -83,6 +83,11 @@ export default {
                 color: $overGreen;
                 padding-bottom: 3px;
                 border-bottom: 1px solid lightgray;
+
+                &:hover{
+                    border-bottom: 1px solid $overGreen;
+                    transition: ease-in-out 0.8s;
+                }
             }
         }
     }

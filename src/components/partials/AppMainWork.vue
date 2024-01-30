@@ -93,6 +93,11 @@ export default {
                     span {
                         padding-bottom: 3px;
                         border-bottom: 1px solid lightgray;
+
+                        &:hover{
+                            border-bottom: 1px solid black;
+                            transition: ease-in-out 0.8s;
+                        }
                     }
                 }
 

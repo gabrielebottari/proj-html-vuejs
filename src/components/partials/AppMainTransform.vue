@@ -109,6 +109,12 @@ export default {
         color: white;
         font-weight: 600;
         font-size: 0.9em;
+
+        &:hover {
+        background-color: $overPurple;
+        transition: ease-in-out 0.3s;
+        color: white;
+        }
     }
   }
   .box-img {

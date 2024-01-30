@@ -188,6 +188,11 @@ export default {
             padding-bottom: 2px;
             font-weight: 600;
             color: black;
+
+            &:hover{
+                border-bottom: 1px solid black;
+                transition: ease-in-out 0.8s;
+            }
         }
     }
 

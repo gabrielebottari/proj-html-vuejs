@@ -42,9 +42,12 @@ section {
 
     button {
         
+        font-size: 15px;
+        font-weight: 700;
         color: $overGreen;
         &:hover {
         background-color: $overGreen;
+        transition: ease-in-out 0.3s;
         color: white;
         }
 
