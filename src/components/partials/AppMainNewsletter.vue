@@ -30,7 +30,7 @@ export default {
             <img class="bottom-right" src="../../../public/maxcoach-shape-02.png" alt="shape2">
             <div class="input-box d-flex">
                 <label for="email" class="d-none">Enter your email</label>
-                <input type="email" placeholder="Enter your email" id="email"/>
+                <input type="email" placeholder="Enter your email" id="email" autocomplete="email"/>
                 <button>Subscribe</button>
             </div>
         </div>

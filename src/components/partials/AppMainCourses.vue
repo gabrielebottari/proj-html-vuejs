@@ -1,5 +1,17 @@
 <script>
 import Card from "./AppCard.vue";
+
+/*
+import { Swiper, SwiperSlide }  from 'swiper/vue';
+import 'swiper/css';
+
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+
+import { Pagination, Navigation, Mousewheel } from 'swiper';
+*/
+
 export default {
 
   data() {
@@ -57,6 +69,10 @@ export default {
   },
     components: {
         Card,
+
+    },
+    setup() {
+
     },
     methods: {
         setCurrentIndex(selectedIndex) {
@@ -87,6 +103,8 @@ export default {
             <h4 class="text-uppercase text-center">join maxcoach at best</h4>
             <h2 class="text-center">Latest Online <span>Courses</span></h2>
 
+
+
                 <div class="cards flex p-3">
                     <Card
                         v-for="(cardData, index) in visibleCards"
@@ -94,6 +112,7 @@ export default {
                         :key="index"
                     />
                 </div>
+
 
                 <div class="thumbs d-flex">
                 <button
