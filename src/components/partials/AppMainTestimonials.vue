@@ -57,7 +57,7 @@ export default {
                 </div>
                 <!-- /persona -->
                 <!-- altra card sotto quella principale, parte alta -->
-                <div class="abs-top">
+                <div class="testimonial-top">
                     <h3>
                     The MaxCoach team works really hard to ensure high level of
                     quality
@@ -69,8 +69,8 @@ export default {
                 </div>
                 <!-- /altra card sotto quella principale, parte alta -->
                 <!-- altra card sotto quella principale, parte bassa -->
-                <div class="abs-bottom">
-                    <div class="person flex">
+                <div class="testimonial-bottom">
+                    <div class="person d-flex">
                         <div class="person-img">
                             <img
                             src="../../../public/testimonial-avata-02.jpg"
@@ -97,7 +97,7 @@ export default {
 
 section {
   padding-top: 120px;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
 
 .content {
     margin: 0 auto;
@@ -179,7 +179,7 @@ section {
       }
     }
     // parte superiore della card di sfondo
-    .abs-top {
+    .testimonial-top {
       position: absolute;
       top: -95px;
       z-index: -1;
@@ -198,7 +198,7 @@ section {
       }
     }
     // parte inferiore della card di sfondo
-    .abs-bottom {
+    .testimonial-bottom {
       position: absolute;
       bottom: -75px;
       z-index: -1;

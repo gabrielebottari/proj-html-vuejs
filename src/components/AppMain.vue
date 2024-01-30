@@ -5,6 +5,7 @@ import MainSatisfaction from "./partials/AppMainSatisfaction.vue";
 import MainWork from "./partials/AppMainWork.vue";
 import MainCourses from "./partials/AppMainCourses.vue";
 import MainTestimonials from "./partials/AppMainTestimonials.vue";
+import MainTransform from "./partials/AppMainTransform.vue";
 
 export default {
     data() {
@@ -19,6 +20,7 @@ export default {
     MainWork,
     MainCourses,
     MainTestimonials,
+    MainTransform,
 
   },
     methods: {
@@ -35,6 +37,7 @@ export default {
         <MainWork></MainWork>
         <MainCourses></MainCourses>
         <MainTestimonials></MainTestimonials>
+        <MainTransform></MainTransform>
     </main>
 </template>
 

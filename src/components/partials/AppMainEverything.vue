@@ -82,7 +82,7 @@ export default {
             span {
                 color: $overGreen;
                 padding-bottom: 3px;
-                border: 1px solid lightgray;
+                border-bottom: 1px solid lightgray;
             }
         }
     }
