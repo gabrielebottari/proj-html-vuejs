@@ -1,16 +1,8 @@
 <script>
 import Card from "./AppCard.vue";
 
-/*
-import { Swiper, SwiperSlide }  from 'swiper/vue';
-import 'swiper/css';
-
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-
-import { Pagination, Navigation, Mousewheel } from 'swiper';
-*/
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Pagination } from 'swiper/modules';
 
 export default {
 
@@ -69,10 +61,14 @@ export default {
   },
     components: {
         Card,
+        Swiper,
+        SwiperSlide,
 
     },
     setup() {
-
+        return {
+            modules: [Pagination],
+        };
     },
     methods: {
         setCurrentIndex(selectedIndex) {
@@ -104,27 +100,17 @@ export default {
             <h2 class="text-center">Latest Online <span>Courses</span></h2>
 
 
+            <Swiper :slidesPerView="3" :loop="true" :breakpoints="{
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                }" :pagination="{ clickable: true }" :modules="modules" class="mySwiper">
+                <SwiperSlide v-for="(cardData, index) in cardsData" :key="index" class="">
+                    <Card :card="cardData" />
+                </SwiperSlide>
+            </Swiper>
 
-                <div class="cards flex p-3">
-                    <Card
-                        v-for="(cardData, index) in visibleCards"
-                        :card="cardData"
-                        :key="index"
-                    />
-                </div>
-
-
-                <div class="thumbs d-flex">
-                <button
-                    v-for="(cardData, index) in cardsData"  
-                    :key="index"
-                    type="button"
-                    @click="setCurrentIndex(index)"
-                    :class="['thumb', { active: currentIndex === index }]"
-                ></button>
-                </div>
-
-                <p class="text-center pt-4">
+               <p class="text-center pt-4">
                 Control your personal preference settings to get notified about
                 appropriate courses.
                 <a href="#">
@@ -164,6 +150,37 @@ export default {
     }
     }
 
+    .mySwiper {
+        .swiper-pagination-bullet {
+    background: #d8d8d8; // Colore normale degli indicatori
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+
+    &-active {
+      background-color: #000; // Colore dell'indicatore attivo
+      width: 12px; // Dimensione maggiore per l'indicatore attivo
+      height: 12px;
+    }
+  }
+  .swiper-wrapper {
+    display: flex;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+
+
+    .card {
+        height: 500px;
+    }
+  }
+}
+
+
+/*
     .cards {
     display: flex;
     overflow: hidden;
@@ -176,6 +193,7 @@ export default {
         width: 300px;
     }
     }
+*/
 
     .thumbs {
     margin-top: 25px;
