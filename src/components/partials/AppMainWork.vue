@@ -69,7 +69,6 @@ export default {
 
 .bg-container {
 
-
     .container {
         height: 700px;
         .content{
@@ -158,7 +157,6 @@ export default {
                 bottom: -50px;
                 right: -50px;
                 z-index: -1;
-
             }
 
             .mid-left {
@@ -188,7 +186,6 @@ export default {
                 }
             }
         }
-
     }
 }
 </style>

@@ -67,7 +67,7 @@ export default {
 @use "../../assets/scss/partials/reset.scss" as*;
 
 section {
-    background-image: url(../../../public/home-3-hero-bg.jpg);
+    background-image: url(/home-3-hero-bg.jpg);
     background-size: cover;
     height: 700px;
 

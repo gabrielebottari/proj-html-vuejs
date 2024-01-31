@@ -1,17 +1,17 @@
 .mySwiper .swiper-pagination-bullet {
     background: grey;
     margin: 0 15px !important;
-    transform: scale(1); // Dimensione normale
-    transition: background-color 0.3s, transform 0.3s; // Transizione per colore di sfondo e trasformazione
+    transform: scale(1);
+    transition: background-color 0.3s, transform 0.3s;
   
     &:hover {
       background-color: #000 !important;
-      transform: scale(1.8); // Aumenta le dimensioni al passaggio del mouse
+      transform: scale(1.8);
       opacity: 1;
     }
   
     &.swiper-pagination-bullet-active {
       background-color: #000;
-      transform: scale(1.8); // Mantieni la dimensione maggiore per il bullet attivo
+      transform: scale(1.8);
     }
   }
