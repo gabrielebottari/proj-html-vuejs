@@ -176,7 +176,7 @@ export default {
 
 
     .card {
-        height: 500px;
+        height: 450px;
     }
   }
 }

@@ -55,7 +55,7 @@ export default {
 
 
             <button class="btn btn-light px-5 py-3">
-                Get free guide
+                Get Free Guide
             </button>
 
         </div>

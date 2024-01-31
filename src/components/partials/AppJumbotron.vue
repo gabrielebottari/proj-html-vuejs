@@ -5,14 +5,40 @@ import Sidemenu from "./AppMainSidemenu.vue"
 export default {
     data() {
         return {
-
+            showBackToTopButton: false,
+            lastScrollPosition: 0
         };
+    },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
     },
     components: {
         Sidemenu,
     },
 
     methods: {
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        },
+        handleScroll() {
+      const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+      if (currentScrollPosition < this.lastScrollPosition) {
+        // Scrolling Up
+        this.showBackToTopButton = true;
+      } else {
+        // Scrolling Down
+        this.showBackToTopButton = false;
+      }
+      this.lastScrollPosition = currentScrollPosition <= 0 ? 0 : currentScrollPosition; // For Mobile or negative scrolling
+    }
+  
+
 
     }
 }
@@ -30,6 +56,7 @@ export default {
                     </button>
                 </div>
                 <Sidemenu/>
+                <button class="back-to-top" @click="scrollToTop" v-show="showBackToTopButton"><i class="fa-solid fa-arrow-up-long fa-2xl"></i></button>
 
             </div>
     </section>
@@ -66,7 +93,23 @@ section {
     }
 
     }
-    
+
+    .back-to-top {
+        position: fixed; /* Posizione fissa rispetto alla viewport */
+        bottom: 20px; /* Distanza dal fondo dello schermo */
+        right: 20px; /* Distanza dal lato destro dello schermo */
+        padding: 25px  25px;
+        background-color: $overGreen; /* Colore di sfondo */
+        color: white; /* Colore del testo */
+        border: none;
+        border-radius: 50%;
+        cursor: pointer; /* Stile del cursore */
+        z-index: 2; /* Assicurati che sia sopra altri elementi */
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
+    }
+        
 
 }
 

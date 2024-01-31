@@ -62,7 +62,7 @@ export default {
 h4 {
   font-size: 14px;
   margin-bottom: 15px;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   color: $darkGrey;
   letter-spacing: 2px;

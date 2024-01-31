@@ -6,6 +6,10 @@ export default {
         };
     },
     methods: {
+        openYoutube() {
+            const youtubeUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+            window.open(youtubeUrl, '_blank');
+        }
 
     }
 }
@@ -22,7 +26,7 @@ export default {
                     <div class="video-box">
                         <img src="../../../public/stock-full-hd-11-670x450.jpg" alt="About-us"/>
                         <!-- logo youtube-->
-                        <div class="yt">
+                        <div class="yt" @click="openYoutube">
                             <img src="../../../public/icon-youtube-play.png" alt="How we work"/>
                         </div>
                     </div>
@@ -135,6 +139,9 @@ export default {
                 top: 40%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                    img:hover {
+                        transform: none;
+                    }
                 }
 
                 }

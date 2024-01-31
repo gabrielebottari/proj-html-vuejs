@@ -1,60 +1,59 @@
 <script>
 export default {
-  data() {
-    return {
-      hoverCard: false,
-    };
-  },
-  props: {
-    card: Object,
-    index: Number,
-  },
-  methods: {
-    getImagePath(imgPath) {
-      return new URL(imgPath, import.meta.url).href;
+    data() {
+        return {
+        hoverCard: false,
+        };
     },
-    cardOnOff() {
-      this.hoverCard = !this.hoverCard;
+    props: {
+        card: Object,
+        index: Number,
     },
-  },
+    methods: {
+        getImagePath(imgPath) {
+        return new URL(imgPath, import.meta.url).href;
+        },
+        cardOnOff() {
+        this.hoverCard = !this.hoverCard;
+        },
+    },
 };
 </script>
 
 <template>
-  <div class="card" @mouseenter="cardOnOff()" @mouseleave="cardOnOff()">
-    <!-- immagine -->
-    <div class="box-img">
-      <img
-        :src="getImagePath(`../../../public/${card.img}`)"
-        alt="foto che rappresenta uno dei corsi di questo sito"
-      />
-      <!-- tag free -->
-      <div class="tag text-uppercase" v-show="card.free"><span class="ps-2">free</span></div>
-      <!-- /tag free -->
+    <div class="card" @mouseenter="cardOnOff()" @mouseleave="cardOnOff()">
+        
+        <div class="box-img">
+            <img
+                :src="getImagePath(`../../../public/${card.img}`)"
+                alt="foto che rappresenta uno dei corsi di questo sito"
+            />
+      
+            <div class="tag text-uppercase" v-show="card.free"><span class="ps-2">free</span></div>
+       
+        </div>
+
+        <div class="box-info">
+
+            <div class="cost">
+                <span class="fs-3">{{ card.cost1 }}</span>
+                <span>{{ card.cost2 }}</span>
+            </div>
+
+            <h4 :class="{ hover: hoverCard }">{{ card.title }}</h4>
+        <!-- icone con testo -->
+        <span class="lessons">
+            <i class="fa-regular fa-file-lines"></i>
+            {{ card.lessons }}
+        </span>
+        <span class="students">
+            <i class="fa-regular fa-user"></i>
+            {{ card.students }}
+        </span>
+        <!-- /icone con testo -->
+        </div>
+        <!-- /info -->
     </div>
-    <!-- /immagine -->
-    <!-- info -->
-    <div class="box-info">
-      <!-- costo del corso -->
-      <div class="cost">
-        <span class="fs-3">{{ card.cost1 }}</span>
-        <span>{{ card.cost2 }}</span>
-      </div>
-      <!-- /costo del corso -->
-      <h4 :class="{ hover: hoverCard }">{{ card.title }}</h4>
-      <!-- icone con testo -->
-      <span class="lessons">
-        <i class="fa-regular fa-file-lines"></i>
-        {{ card.lessons }}
-      </span>
-      <span class="students">
-        <i class="fa-regular fa-user"></i>
-        {{ card.students }}
-      </span>
-      <!-- /icone con testo -->
-    </div>
-    <!-- /info -->
-  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -68,9 +67,9 @@ export default {
   cursor: pointer;
   border: none;
   &:hover {
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-    transition: ease-in-out 0.3s;
+    -webkit-box-shadow: 0px 0px 75px -30px rgba(0, 0, 0, 0.55);
+-moz-box-shadow: 0px 0px 75px -30px rgba(0, 0, 0, 0.55);
+box-shadow: 0px 0px 75px -30px rgba(0, 0, 0, 0.55);
 
   }
   .box-img {
@@ -81,6 +80,7 @@ export default {
       right: 0;
       color: white;
       background-color: orangered;
+      border: none;
       padding: 3px 20px;
       font-size: 20px;
       font-weight: 600;
@@ -102,6 +102,10 @@ export default {
   img {
     width: 100%;
     display: block;
+    &:hover {
+            transform: scale(1.1);
+            transition: ease-out 1s;
+            }
   }
   .box-info {
     padding: 25px;

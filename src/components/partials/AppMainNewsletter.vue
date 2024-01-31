@@ -34,6 +34,7 @@ export default {
                 <button>Subscribe</button>
             </div>
         </div>
+
     </section>
 
 
@@ -128,6 +129,7 @@ p {
     background-color: $overGreen;
     cursor: pointer;
     font-weight: bold;
+    font-size: 0.9em;
 
     &:hover {
         background-color: $overPurple;

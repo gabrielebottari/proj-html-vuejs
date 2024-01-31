@@ -67,6 +67,9 @@ export default {
     methods: {
         toggleMenu() {
             this.isMenuVisible = !this.isMenuVisible; // Inverti lo stato del menu
+        },
+        goToAnotherPage() {
+        this.$router.push('/page2');
         }
     }
 }
@@ -77,15 +80,15 @@ export default {
     <ul class="d-flex right-menu" :class="{ 'menu-shifted': isMenuVisible }">
 
         <li data-tooltip="Select Demo" @click="toggleMenu"><i class="fa-solid fa-ruler"></i></li>
-        <li data-tooltip="Support Channel" href="#"><i class="fa-regular fa-life-ring"></i></li>
-        <li data-tooltip="Documentation" href="#"><i class="fa-regular fa-address-book"></i></li>
-        <li data-tooltip="Purchase Maxcoach" href="#"><i class="bi bi-cart3"></i></li>
+        <li data-tooltip="Support Channel" @click="goToAnotherPage" href="#"><i class="fa-regular fa-life-ring"></i></li>
+        <li data-tooltip="Documentation" @click="goToAnotherPage" href="#"><i class="fa-regular fa-address-book"></i></li>
+        <li data-tooltip="Purchase Maxcoach" @click="goToAnotherPage" href="#"><i class="bi bi-cart3"></i></li>
 
     </ul>
 
     <div class="side-menu px-3" :class="{ 'visible': isMenuVisible }">
-        <h5 class="text-center text-uppercase py-5 px-3">MAXCOACH - ONLINE LEARNING AND EDUCATION WORDPRESS THEME</h5>
-        <button class="btn mb-3"> <i class="bi bi-cart3"></i> Buy Now</button>
+        <h6 class="text-center text-uppercase py-5 px-3">MAXCOACH - ONLINE LEARNING AND EDUCATION WORDPRESS THEME</h6>
+        <button class="btn mb-4"> <i class="bi bi-cart3"></i> Buy Now</button>
 
         <div class="img-box row">
             <div class="col-6 img-container p-2 rounded-2" v-for="(img, index) in imgsData" :key="index" :data-title="img.title">
@@ -107,7 +110,7 @@ ul {
   border-bottom-left-radius: 5px;
   list-style-type: none;
   width: 40px;
-  z-index: 2;
+  z-index: 3;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 
   li {
@@ -158,7 +161,7 @@ ul {
     height: 100%;
     background-color: white;
     transition: right 0.5s ease;
-    z-index: 2;
+    z-index: 3;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     overflow-y: auto;
 
@@ -170,8 +173,10 @@ ul {
         display: none;
     }
 
-    h5{
+    h6{
         color: $darkGrey;
+        font-weight: 700;
+        letter-spacing: 1.5px;
     }
 
     button {
