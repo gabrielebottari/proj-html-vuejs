@@ -24,9 +24,8 @@ export default {
     MainTestimonials,
     MainTransform,
     MainBlogs,
-    MainNewsletter
-
-  },
+    MainNewsletter,
+},
     methods: {
 
     }
@@ -35,15 +34,7 @@ export default {
 
 <template>
     <main>
-        <Jumbotron></Jumbotron>
-        <MainEverything></MainEverything>
-        <MainSatisfaction></MainSatisfaction>
-        <MainWork></MainWork>
-        <MainCourses></MainCourses>
-        <MainTestimonials></MainTestimonials>
-        <MainTransform></MainTransform>
-        <MainBlogs></MainBlogs>
-        <MainNewsletter></MainNewsletter>
+        <RouterView></RouterView>
     </main>
 </template>
 
