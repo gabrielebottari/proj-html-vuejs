@@ -83,6 +83,6 @@ h2 {
 
 section {
   background-color: #f6f6f6;
-  padding: 80px 0;
+  padding-top: 80px;
 }
 </style>

@@ -29,22 +29,24 @@ export default {
 
         <div class="box-info px-3">
 
-        <div class="role text-uppercase fs-6">
-            {{ card.role }}
-        </div>
-    
-        <h4>{{ card.title }}</h4>
-    
-        <span class="date">
-            <i class="fa-regular fa-calendar"></i>
-
-        </span>
-
-        <span class="views">
-            <i class="fa-solid fa-eye"></i>
-            {{ card.views }}
-        </span>
+            <div class="role text-uppercase fs-6">
+                {{ card.role }}
+            </div>
         
+            <h4>{{ card.title }}</h4>
+        
+            <div class="card-stats">
+                <span class="date">
+                    <i class="fa-regular fa-calendar"></i>
+                    {{ card.date }}
+                </span>
+
+                <span class="views">
+                    <i class="fa-solid fa-eye"></i>
+                    {{ card.views }}
+                </span>
+            </div>
+    
         </div>
 
     </div>
@@ -57,6 +59,9 @@ export default {
 .card {
     border: none;
     width: calc(100% / 3);
+    background-color: $bgContainer;
+    min-height: 300px;
+    align-items: stretch;
     cursor: pointer;
     .box-img {
         border-radius: 5px;
@@ -73,6 +78,7 @@ export default {
     .box-info {
         padding: 25px 0;
         background-color: $bgContainer;
+        min-height: 310px;
 
         .role {
             color: $darkGrey;
@@ -83,32 +89,36 @@ export default {
         font-size: 25px;
         line-height: 1.5;
         margin-top: 15px;
-        margin-bottom: 25px;
-        &:hover {
-            color: $hoverGreen;
+        margin-bottom: 20px;
+        min-height: 115px;
+            &:hover {
+                color: $hoverGreen;
+            }
         }
-        }
-        .date {
-        margin-right: 25px;
-        font-size: 13px;
-        color: $darkGrey;
 
-        & > * {
-            margin-right: 7px;
-        }
-        }
-        .views {
-        font-size: 13px;
-        color: $darkGrey;
+        .card-stats {
+            color: $darkGrey;
+            .date {
+                margin-right: 25px;
+                font-size: 13px;
+                color: $darkGrey;
 
-        & > * {
-            margin-right: 7px;
-        }
-        }
-        .role {
-        font-size: 13px;
+                & > * {
+                    margin-right: 7px;
+                }
+            }
+            .views {
+            font-size: 13px;
+            color: $darkGrey;
+
+                & > * {
+                    margin-right: 7px;
+                }
+            }
+            .role {
+            font-size: 13px;
+            }
         }
     }
-  
 }
 </style>

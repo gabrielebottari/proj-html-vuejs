@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <div class="card" @mouseenter="cardOnOff()" @mouseleave="cardOnOff()">
+    <div class="card d-flex" @mouseenter="cardOnOff()" @mouseleave="cardOnOff()">
         
         <div class="box-img">
             <img
@@ -42,14 +42,17 @@ export default {
 
             <h4 :class="{ hover: hoverCard }">{{ card.title }}</h4>
 
-            <span class="lessons">
-                <i class="fa-regular fa-file-lines"></i>
-                {{ card.lessons }}
-            </span>
-            <span class="students">
-                <i class="fa-regular fa-user"></i>
-                {{ card.students }}
-            </span>
+            <div class="card-stats">
+                <span class="lessons">
+                    <i class="fa-regular fa-file-lines"></i>
+                    {{ card.lessons }}
+                </span>
+                <span class="students">
+                    <i class="fa-regular fa-user"></i>
+                    {{ card.students }}
+                </span>
+            </div>
+
 
         </div>
  
@@ -64,6 +67,7 @@ export default {
   border-radius: 5px;
   overflow: hidden;
   background-color: white;
+  min-height: 450px;
   cursor: pointer;
   border: none;
     &:hover {
@@ -110,6 +114,8 @@ export default {
     }
     .box-info {
         padding: 25px;
+        align-items: stretch;
+        position: relative;
 
         .cost{
             span {
@@ -128,28 +134,37 @@ export default {
                 color: $hoverGreen;
             }
         }
-        .lessons {
-        margin-right: 25px;
-        font-size: 15px;
-            & > * {
-                margin-right: 7px;
+
+        .card-stats {
+            position: fixed;
+            bottom: 30px;
+            left: 25px;
+            color: $darkGrey;
+            .lessons {
+            margin-right: 25px;
+            font-size: 15px;
+                & > * {
+                    margin-right: 7px;
+                }
             }
+            .students {
+            font-size: 13px;
+                & > * {
+                    margin-right: 7px;
+                }
+                }
+            .cost {
+            font-weight: bold;
+                & :first-child {
+                    font-size: 20px;
+                }
+                & :last-child {
+                    font-size: 14px;
+                }
+            }
+
         }
-        .students {
-        font-size: 13px;
-            & > * {
-                margin-right: 7px;
-            }
-            }
-        .cost {
-        font-weight: bold;
-            & :first-child {
-                font-size: 20px;
-            }
-            & :last-child {
-                font-size: 14px;
-            }
-        }
+
     }
 }
 </style>
