@@ -3,6 +3,11 @@ import Card from "./AppCard.vue";
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/bundle';
+import '../../assets/scss/partials/swiper.scss';
+
 
 export default {
 
@@ -100,11 +105,17 @@ export default {
             <h2 class="text-center">Latest Online <span>Courses</span></h2>
 
 
-            <Swiper :slidesPerView="3" :loop="true" :breakpoints="{
+            <Swiper :slidesPerView="3"
+                :loop="true" 
+                :breakpoints="{
                 320: { slidesPerView: 1 },
                 768: { slidesPerView: 2 },
                 1024: { slidesPerView: 3 },
-                }" :pagination="{ clickable: true }" :modules="modules" class="mySwiper">
+                }" 
+                :pagination="{ clickable: true }"
+                :modules="modules"
+                :spaceBetween="60"
+                class="mySwiper">
                 <SwiperSlide v-for="(cardData, index) in cardsData" :key="index" class="">
                     <Card :card="cardData" />
                 </SwiperSlide>
@@ -128,6 +139,7 @@ export default {
 <style scoped lang="scss">
 @use "../../assets/scss/partials/variables.scss" as *;
 @use "../../assets/scss/partials/reset.scss" as*;
+@use "../../assets/scss/partials/swiper.scss" as*;
 
 .bg-container {
     background-image: linear-gradient(white, $bgContainer);
@@ -151,19 +163,9 @@ export default {
     }
 
     .mySwiper {
-        .swiper-pagination-bullet {
-    background: #d8d8d8; // Colore normale degli indicatori
-    opacity: 1;
-    width: 8px;
-    height: 8px;
-    margin: 0 3px;
 
-    &-active {
-      background-color: #000; // Colore dell'indicatore attivo
-      width: 12px; // Dimensione maggiore per l'indicatore attivo
-      height: 12px;
-    }
-  }
+        padding: 0 50px 80px 50px;
+
   .swiper-wrapper {
     display: flex;
   }
@@ -179,41 +181,6 @@ export default {
   }
 }
 
-
-/*
-    .cards {
-    display: flex;
-    overflow: hidden;
-    gap: 50px;
-    margin: 0 50px;
-
-    .card {
-        flex: 0 0 30%;
-        height: 450px;
-        width: 300px;
-    }
-    }
-*/
-
-    .thumbs {
-    margin-top: 25px;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    .thumb {
-        width: 8px;
-        height: 8px;
-        background-color: #d8d8d8;
-        border-radius: 50%;
-
-        &.active {
-        width: 12px;
-        height: 12px;
-        background-color: black;
-        border-radius: 50%;
-        }
-    }
-    }
     p {
         margin: 0 auto;    
         width: 50%;
