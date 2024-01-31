@@ -8,7 +8,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/bundle';
 import '../../assets/scss/partials/swiper.scss';
 
-
 export default {
 
   data() {
@@ -77,22 +76,22 @@ export default {
     },
     methods: {
         setCurrentIndex(selectedIndex) {
-      const totalCards = this.cardsData.length;
-      this.currentIndex = selectedIndex % totalCards;
-    },
+            const totalCards = this.cardsData.length;
+            this.currentIndex = selectedIndex % totalCards;
+        },
     },
     computed: {
         visibleCards() {
-      const cardsToShow = 3;
-      let cards = [];
-      for (let i = 0; i < cardsToShow; i++) {
-        let index = (this.currentIndex + i) % this.cardsData.length;
-        cards.push(this.cardsData[index]);
-      }
-      return cards;
-    },
+            const cardsToShow = 3;
+            let cards = [];
+            for (let i = 0; i < cardsToShow; i++) {
+                let index = (this.currentIndex + i) % this.cardsData.length;
+                cards.push(this.cardsData[index]);
+            }
+            return cards;
+        },
 
-  },
+    },
 
 };
 </script>
@@ -101,37 +100,37 @@ export default {
     <section>
         <div class="bg-container">
             <div class="container">
-            <h4 class="text-uppercase text-center">join maxcoach at best</h4>
-            <h2 class="text-center">Latest Online <span>Courses</span></h2>
+                <h4 class="text-uppercase text-center">join maxcoach at best</h4>
+                <h2 class="text-center">Latest Online <span>Courses</span></h2>
 
 
-            <Swiper :slidesPerView="3"
-                :loop="true" 
-                :breakpoints="{
-                320: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-                }" 
-                :pagination="{ clickable: true }"
-                :modules="modules"
-                :spaceBetween="60"
-                class="mySwiper">
-                <SwiperSlide v-for="(cardData, index) in cardsData" :key="index" class="">
-                    <Card :card="cardData" />
-                </SwiperSlide>
-            </Swiper>
+                <Swiper :slidesPerView="3"
+                    :loop="true" 
+                    :breakpoints="{
+                    320: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                    }" 
+                    :pagination="{ clickable: true }"
+                    :modules="modules"
+                    :spaceBetween="60"
+                    class="mySwiper">
+                    <SwiperSlide v-for="(cardData, index) in cardsData" :key="index" class="">
+                        <Card :card="cardData" />
+                    </SwiperSlide>
+                </Swiper>
 
-               <p class="text-center pt-4">
-                Control your personal preference settings to get notified about
-                appropriate courses.
-                <a href="#">
-                    View all courses
-                    <i class="fa-solid fa-arrow-right-long"></i>
-                </a>
-                </p>
+                    <p class="text-center pt-4">
+                        Control your personal preference settings to get notified about
+                        appropriate courses.
+                        <a href="#">
+                            View all courses
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </p>
                 
             </div>
-            <img src="../../../public/svg-1.svg" alt="svg">
+            <img src="/svg-1.svg" alt="svg">
         </div>
     </section>
 </template>
@@ -146,40 +145,40 @@ export default {
 
 
     h4 {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
 
     }
     h2 {
 
-    font-size: 50px;
-    margin-bottom: 50px;
-    span {
-        font-weight: 400;
-        color: $overGreen;
-    }
+        font-size: 50px;
+        margin-bottom: 50px;
+        span {
+            font-weight: 400;
+            color: $hoverGreen;
+        }
     }
 
     .mySwiper {
 
         padding: 0 50px 80px 50px;
 
-  .swiper-wrapper {
-    display: flex;
-  }
+            .swiper-wrapper {
+                display: flex;
+            }
 
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
 
 
-    .card {
-        height: 450px;
+            .card {
+                height: 450px;
+            }
+        }
     }
-  }
-}
 
     p {
         margin: 0 auto;    

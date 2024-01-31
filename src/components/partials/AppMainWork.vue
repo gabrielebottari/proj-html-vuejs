@@ -21,28 +21,25 @@ export default {
         <section class="container py-3">
 
             <div class="content d-flex p-5">
-                <!-- parte sinistra con foto -->
+
                 <div class="box-img">
                     <div class="video-box">
-                        <img src="../../../public/stock-full-hd-11-670x450.jpg" alt="About-us"/>
-                        <!-- logo youtube-->
+                        <img src="/stock-full-hd-11-670x450.jpg" alt="About-us"/>
+
                         <div class="yt" @click="openYoutube">
-                            <img src="../../../public/icon-youtube-play.png" alt="How we work"/>
+                            <img src="/icon-youtube-play.png" alt="How we work"/>
                         </div>
                     </div>
 
-
-                    <img class="mid-left" src="../../../public/maxcoach-shape-05-150x150.png" alt="shape8">
-                    <img class="bottom-right" src="../../../public/maxcoach-shape-07-150x150.png" alt="shape7">
-                    <img class="top-left" src="../../../public/svg-0.svg" alt="svg0">
+                    <img class="mid-left" src="/maxcoach-shape-05-150x150.png" alt="shape8">
+                    <img class="bottom-right" src="/maxcoach-shape-07-150x150.png" alt="shape7">
+                    <img class="top-left" src="/svg-0.svg" alt="svg0">
                     
                     <div class="outer-circle">
                         <div class="inner-circle"></div>
                     </div>
                 </div>
-                    <!-- /parte sinistra con foto -->
 
-                    <!-- parte destra con la info -->
                 <div class="info">
                     <h4 class="text-uppercase">how we work</h4>
                     <h2>Upgrade Your Skills <span>Upgrade Your Life</span></h2>
@@ -58,7 +55,7 @@ export default {
                         </button>
                     </div>
                 </div>
-                    <!-- /parte destra con le info -->
+
             </div>
             
         </section>
@@ -75,9 +72,7 @@ export default {
 
     .container {
         height: 700px;
-
         .content{
-
             .info {
                 width: 45%;
                 padding: 50px 80px;
@@ -91,7 +86,7 @@ export default {
                     font-size: 2.5em;
                     font-weight: 600;
                     span {
-                        color: $overGreen;
+                        color: $hoverGreen;
                         font-weight: 400;
                     }
                 }
@@ -109,102 +104,91 @@ export default {
                 }
 
             }
-
-
             .box-img {
             position: relative;
             width: 55%;
 
-            .video-box {
-                width: 100%;
-                overflow: hidden; // Impedisce all'immagine ingrandita di fuoriuscire dal contenitore
-                border-radius: 5px; // Mantiene il bordo arrotondato
-                img {
+                .video-box {
                     width: 100%;
-                    display: block;
-                    transition: transform 0.5s ease; // Transizione fluida per l'effetto di zoom
-                    &:hover {
-                        transform: scale(1.1); // Effetto di zoom
+                    overflow: hidden;
+                    border-radius: 5px;
+                    img {
+                        width: 100%;
+                        display: block;
+                        transition: transform 0.5s ease;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
                     }
-                }
-            }
+                }               
 
-
-
-                
-                // logo youtube
                 .yt {
-                width: 100px;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                    width: 100px;
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    cursor: pointer;
+
                     img:hover {
                         transform: none;
                     }
                 }
 
-                }
-
-
-                
-                .top-left {
-                    z-index: -2;
-                    position: absolute;
-                    width: 180px;
-                    top: -50px;
-                    left: -100px;
-                    filter: invert(100%) 
-                            sepia(11%) 
-                            saturate(425%) 
-                            hue-rotate(206deg) 
-                            brightness(113%) 
-                            contrast(89%);
+            }
+            
+            .top-left {
+                z-index: -2;
+                position: absolute;
+                width: 180px;
+                top: -50px;
+                left: -100px;
+                filter: invert(100%) 
+                        sepia(11%) 
+                        saturate(425%) 
+                        hue-rotate(206deg) 
+                        brightness(113%) 
+                        contrast(89%);
                     
-                }
-
-                .bottom-right {
-                    width: 180px;
-                    position: absolute;
-                    bottom: -50px;
-                    right: -50px;
-                    z-index: -1;
-
-                }
-
-                .mid-left {
-                    z-index: -1;
-                    position: absolute;
-                    top: 60px;
-                    left: -80px;
-                    width: 150px;
-                }
-
-                .outer-circle {
-                    width: 80px; /* Diameter of the outer circle */
-                    height: 80px; /* Same as width for perfect circle */
-                    border-radius: 50%; /* Makes the div a circle */
-                    background-color: orangered; /* Color of the outer circle */
-                    opacity: 0.4;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: relative;
-                    top: -510px;
-                    left: 660px;
-
-                        .inner-circle {
-                        width: 60px; /* Diameter of the inner circle (hollow part) */
-                        height: 60px; /* Same as width for perfect circle */
-                        background-color: white; /* Match to surrounding background for hollow effect */
-                        border-radius: 50%; /* Makes the div a circle */
-                        }
-                }
             }
 
+            .bottom-right {
+                width: 180px;
+                position: absolute;
+                bottom: -50px;
+                right: -50px;
+                z-index: -1;
+
+            }
+
+            .mid-left {
+                z-index: -1;
+                position: absolute;
+                top: 60px;
+                left: -80px;
+                width: 150px;
+            }
+            .outer-circle {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: orangered;
+                opacity: 0.4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                top: -510px;
+                left: 660px;
+                .inner-circle {
+                    width: 60px;
+                    height: 60px;
+                    background-color: white;
+                    border-radius: 50%;
+                }
+            }
         }
+
     }
-
-
-
+}
 </style>

@@ -31,9 +31,9 @@ export default {
                     currentNumber = finalNumber;
                     clearInterval(interval);
                 }
-                // Aggiornamento diretto dell'array
+                
                 this.animatedNumbers[index] = Math.floor(currentNumber);
-            }, 10); // Regola per la velocità dell'animazione
+            }, 10);
         }
 
     },
@@ -74,12 +74,10 @@ export default {
         position: relative;
         margin-bottom: 50px;
 
-
         h3 {
-            color: $overGreen;
+            color: $hoverGreen;
             font-size: 3em;
         }
-
 
         h6 {
             color: $darkGrey;

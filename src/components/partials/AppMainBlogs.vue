@@ -45,11 +45,9 @@ export default {
     <div class="container px-5">
       <h4 class="text-uppercase">read for more joyment</h4>
       <h2>Latest From <span>Our Blogs</span></h2>
-      <!-- container card -->
       <div class="cards d-flex">
         <BlogsCard v-for="cardData in cardsData" :card="cardData" />
       </div>
-      <!-- /container card -->
     </div>
   </section>
 
@@ -73,15 +71,16 @@ h2 {
   margin-bottom: 20px;
   text-align: center;
   margin-bottom: 60px;
-  span {
-    color: $overGreen;
-    font-weight: 400;
-  }
+    span {
+        color: $hoverGreen;
+        font-weight: 400;
+    }
 }
 
 .cards {
   gap: 30px;
 }
+
 section {
   background-color: #f6f6f6;
   padding: 80px 0;

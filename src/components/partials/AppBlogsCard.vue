@@ -22,7 +22,7 @@ export default {
 
         <div class="box-img">
         <img
-            :src="getImagePath(`../../../public/${card.img}`)"
+            :src="getImagePath(`/${card.img}`)"
             alt="foto che fornisce un'idea sul blog corrente"
         />
         </div>
@@ -85,7 +85,7 @@ export default {
         margin-top: 15px;
         margin-bottom: 25px;
         &:hover {
-            color: $overGreen;
+            color: $hoverGreen;
         }
         }
         .date {

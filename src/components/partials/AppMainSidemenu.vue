@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-            isMenuVisible: false, // Stato per tracciare la visibilità del menu
+            isMenuVisible: false,
 
             imgsData: [
             {
@@ -66,10 +66,10 @@ export default {
     },
     methods: {
         toggleMenu() {
-            this.isMenuVisible = !this.isMenuVisible; // Inverti lo stato del menu
+            this.isMenuVisible = !this.isMenuVisible;
         },
         goToAnotherPage() {
-        this.$router.push('/page2');
+            this.$router.push('/page2');
         }
     }
 }
@@ -92,7 +92,7 @@ export default {
 
         <div class="img-box row">
             <div class="col-6 img-container p-2 rounded-2" v-for="(img, index) in imgsData" :key="index" :data-title="img.title">
-                <img :src="`../../../public/${img.img}`" :alt="img.title">
+                <img :src="`/${img.img}`" :alt="img.title">
             </div>
         </div>
     </div>
@@ -119,38 +119,38 @@ ul {
     text-align: center;
     cursor: pointer;
 
-    &:hover::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      right: 100%;
-      transform: translateY(-80%);
-      background-color: black;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      white-space: nowrap;
-      font-size: 0.8em;
-      z-index: 1;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    
-    }
+        &:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 100%;
+            transform: translateY(-80%);
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 0.8em;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        
+        }
 
-    i{
-        color:black;
+        i{
+            color:black;
+        }
     }
-  }
 }
 
 .right-menu {
-        position: fixed;
-        right: 0;
-        top: 20%;
-        transition: transform 0.5s ease;
+    position: fixed;
+    right: 0;
+    top: 20%;
+    transition: transform 0.5s ease;
 
-        &.menu-shifted {
-            transform: translateX(-320px);
-        }
+    &.menu-shifted {
+        transform: translateX(-320px);
     }
+}
 
 .side-menu {
     position: fixed;
@@ -182,14 +182,14 @@ ul {
     button {
     padding: 15px 30px;
     color: white;
-    background-color: $overGreen;
+    background-color: $hoverGreen;
     cursor: pointer;
     font-weight: bold;
 
-    &:hover {
-        background-color: $overPurple;
-        transition: ease-in-out 0.3s;
-        color: white;
+        &:hover {
+            background-color: $hoverPurple;
+            transition: ease-in-out 0.3s;
+            color: white;
         }
     
     }
@@ -198,30 +198,29 @@ ul {
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    &:hover {
-        transform: translateY(-5px); // Solleva l'immagine di 5px
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Aggiunge una box-shadow
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
-            &::after {
-            content: attr(data-title); // Usa il titolo dell'immagine per il contenuto
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%) translateY(-100%); // Centra sopra l'immagine
-            background-color: black; // Sostituisci con il colore desiderato
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            white-space: nowrap;
-            font-size: 0.8em;
-            z-index: 1;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: ease-in-out 0.5s;
-            
+                &::after {
+                content: attr(data-title);
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%) translateY(-100%);
+                background-color: black;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 5px;
+                white-space: nowrap;
+                font-size: 0.8em;
+                z-index: 1;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+                transition: ease-in-out 0.5s;                
+            }
         }
-    }
 
-}
+    }
 }
 
 </style>

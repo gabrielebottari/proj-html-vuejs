@@ -26,17 +26,17 @@ export default {
                 behavior: 'smooth'
             });
         },
-        handleScroll() {
-      const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
-      if (currentScrollPosition < this.lastScrollPosition) {
-        // Scrolling Up
-        this.showBackToTopButton = true;
-      } else {
-        // Scrolling Down
-        this.showBackToTopButton = false;
-      }
-      this.lastScrollPosition = currentScrollPosition <= 0 ? 0 : currentScrollPosition; // For Mobile or negative scrolling
-    }
+            handleScroll() {
+        const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+            if (currentScrollPosition < this.lastScrollPosition) {
+
+                this.showBackToTopButton = true;
+            } else {
+
+                this.showBackToTopButton = false;
+            }
+            this.lastScrollPosition = currentScrollPosition <= 0 ? 0 : currentScrollPosition;
+        }
   
 
 
@@ -56,8 +56,7 @@ export default {
                     </button>
                 </div>
                 <Sidemenu/>
-                <button class="back-to-top" @click="scrollToTop" v-show="showBackToTopButton"><i class="fa-solid fa-arrow-up-long fa-2xl"></i></button>
-
+                <button class="back-to-top d-flex justify-content-center align-items-center" @click="scrollToTop" v-show="showBackToTopButton"><i class="bi bi-arrow-up fs-3 pb-1"></i></button>
             </div>
     </section>
 
@@ -83,9 +82,9 @@ section {
     button {        
         font-size: 15px;
         font-weight: 700;
-        color: $overGreen;
+        color: $hoverGreen;
         &:hover {
-            background-color: $overGreen;
+            background-color: $hoverGreen;
             transition: ease-in-out 0.3s;
             color: white;
         }
@@ -95,22 +94,23 @@ section {
     }
 
     .back-to-top {
-        position: fixed; /* Posizione fissa rispetto alla viewport */
-        bottom: 20px; /* Distanza dal fondo dello schermo */
-        right: 20px; /* Distanza dal lato destro dello schermo */
-        padding: 25px  25px;
-        background-color: $overGreen; /* Colore di sfondo */
-        color: white; /* Colore del testo */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: $hoverGreen;
+        color: white;
         border: none;
         border-radius: 50%;
-        cursor: pointer; /* Stile del cursore */
-        z-index: 2; /* Assicurati che sia sopra altri elementi */
+        cursor: pointer;
+        z-index: 2;
         -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
         -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
         box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
+        position: fixed;
     }
         
-
 }
 
 </style>
