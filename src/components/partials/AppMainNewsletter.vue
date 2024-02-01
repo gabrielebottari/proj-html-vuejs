@@ -46,6 +46,7 @@ export default {
 
 section {
     padding: 70px 100px;
+    margin-bottom: 30px;
 
     .container{
         position: relative;
