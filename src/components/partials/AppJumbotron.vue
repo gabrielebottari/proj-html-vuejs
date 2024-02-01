@@ -1,7 +1,6 @@
 <script>
 import Sidemenu from "./AppMainSidemenu.vue"
     
-
 export default {
     data() {
         return {
@@ -10,15 +9,12 @@ export default {
         };
     },
     mounted() {
-        window.addEventListener('scroll', this.handleScroll);
     },
     beforeUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
     },
     components: {
         Sidemenu,
     },
-
     methods: {
         scrollToTop() {
             window.scrollTo({
@@ -26,20 +22,6 @@ export default {
                 behavior: 'smooth'
             });
         },
-            handleScroll() {
-        const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
-            if (currentScrollPosition < this.lastScrollPosition) {
-
-                this.showBackToTopButton = true;
-            } else {
-
-                this.showBackToTopButton = false;
-            }
-            this.lastScrollPosition = currentScrollPosition <= 0 ? 0 : currentScrollPosition;
-        }
-  
-
-
     }
 }
 </script>
@@ -56,7 +38,7 @@ export default {
                     </button>
                 </div>
                 <Sidemenu/>
-                <button class="back-to-top d-flex justify-content-center align-items-center" @click="scrollToTop" v-show="showBackToTopButton"><i class="bi bi-arrow-up fs-3 pb-1"></i></button>
+                <button class="back-to-top d-flex justify-content-center align-items-center" @click="scrollToTop"><i class="bi bi-arrow-up fs-3 pb-1"></i></button>
             </div>
     </section>
 
@@ -73,28 +55,24 @@ section {
 
     div{
         position: relative;
-    
 
-    h1{
-        font-size: 4em;
-    }
-
-    button {        
-        font-size: 15px;
-        font-weight: 700;
-        color: $hoverGreen;
-        &:hover {
-            background-color: $hoverGreen;
-            transition: ease-in-out 0.3s;
-            color: white;
+        h1{
+            font-size: 4em;
         }
 
-    }
-
+        button {        
+            font-size: 15px;
+            font-weight: 700;
+            color: $hoverGreen;
+            &:hover {
+                background-color: $hoverGreen;
+                transition: ease-in-out 0.3s;
+                color: white;
+            }
+        }
     }
 
     .back-to-top {
-        position: fixed;
         bottom: 20px;
         right: 20px;
         width: 60px;
@@ -109,8 +87,8 @@ section {
         -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
         box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
         position: fixed;
+        display: none;
     }
-        
 }
 
 </style>
