@@ -358,6 +358,7 @@
         right: 0;
         width: 100%;
         z-index: 3;
+        box-shadow: 0px 30px 20px -20px rgba(0,0,0,0.1);
         
             nav{
                 padding:25px 0;

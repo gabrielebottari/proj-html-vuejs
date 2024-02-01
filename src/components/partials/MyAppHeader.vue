@@ -347,6 +347,7 @@
 @use "../../assets/scss/partials/MySecondaryReset.scss" as*;
     header{
         background-color: #ffffff;
+        box-shadow: 0px 30px 20px -20px rgba(0,0,0,0.1);
         .container{
             nav{
                 padding:25px 0;
