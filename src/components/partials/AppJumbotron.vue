@@ -32,7 +32,7 @@ export default {
             <div class="mx-auto">
                 <h2 class="fw-bold">Commence Business</h2>
                 <h1 class="fw-lighter pb-2">Distant Mentoring Program</h1>
-                <div>
+                <div class="pt-4">
                     <button class="btn btn-light px-5 py-3">
                         Download free guidebook <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
