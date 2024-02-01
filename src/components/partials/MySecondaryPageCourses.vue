@@ -50,7 +50,7 @@
             </h2>
             <!--qui ciclati le card-->
             <div class="row">
-                <div v-for="elem in cardsData" class="card col-4">
+                <div v-for="elem in cardsData" class="card col-4  ">
                 
                 <div class="box-img">
                     <img
@@ -172,9 +172,6 @@
         }
 
         .card-stats {
-            position: fixed;
-            bottom: 30px;
-            left: 25px;
             color: $darkGrey;
             .lessons {
             margin-right: 25px;
