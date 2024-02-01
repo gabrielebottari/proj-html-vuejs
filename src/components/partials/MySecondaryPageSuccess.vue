@@ -39,10 +39,10 @@
             <div class="container">
                 <div class="row imgRad mb-5">
                     <div class="col-8">
-                        <img src="../../public/img/success-story-image-01.jpg" alt="">
+                        <img src="/success-story-image-01.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img src="../../public/img/success-story-image-02.jpg" alt="">
+                        <img src="/success-story-image-02.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -51,14 +51,16 @@
 
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/variables.scss' as *;
-@use '../assets/scss/partials/reset.scss' as *;
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/reset.scss" as*;
+@use "../../assets/scss/partials/MySecondaryReset.scss" as*;
+
 .imgRad img{
         border-radius: 10px;
         
     }
 .testoEv{
-    color: $hover;
+    color: $hoverGreen;
 }
 </style>
 

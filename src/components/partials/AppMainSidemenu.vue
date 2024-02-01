@@ -69,7 +69,7 @@ export default {
             this.isMenuVisible = !this.isMenuVisible;
         },
         goToAnotherPage() {
-            this.$router.push('/page2');
+            this.$router.push('/SuccessStory');
         }
     }
 }

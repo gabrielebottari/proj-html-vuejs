@@ -12,7 +12,7 @@ export default {
 
   data() {
     return {
-      cardsData: [
+        cardsData: [
             {
             img: "finance-course-thumbnail-04-480x298.jpg",
             cost1: "$0",

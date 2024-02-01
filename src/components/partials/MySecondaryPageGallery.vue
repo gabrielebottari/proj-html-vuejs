@@ -26,7 +26,7 @@
             <!-- prima riga gallery -->
             <div class="row gx-0 mb-2">
                 <div class="col-3 ">
-                    <img src="../../public/img/start-here-gallery-image-01.jpg" alt="">
+                    <img src="/start-here-gallery-image-01.jpg" alt="">
                     <div class="descriptionGallery d-flex flex-column justify-content-center ">
                         <h3>
                             lonnie marks
@@ -38,7 +38,7 @@
                 </div>
                 
                 <div class="col-4 px-2">
-                    <img src="../../public/img/start-here-gallery-image-02.jpg" alt="">
+                    <img src="/start-here-gallery-image-02.jpg" alt="">
                     <div class="descriptionGallery d-flex flex-column justify-content-center ">
                         <h3>
                             Britney Salker
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="col-3 pe-2">
-                    <img src="../../public/img/start-here-gallery-image-03.jpg" alt="">
+                    <img src="/start-here-gallery-image-03.jpg" alt="">
                     <div class="descriptionGallery d-flex flex-column justify-content-center ">
                         <h3>
                             Bronnies Wallz
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="col-2">
-                    <img src="../../public/img/start-here-gallery-image-04.jpg" alt="">
+                    <img src="/start-here-gallery-image-04.jpg" alt="">
                     <div class="descriptionGallery d-flex flex-column justify-content-center ">
                         <h3>
                             Mia Paulo
@@ -75,7 +75,7 @@
             <div class="row gx-0  mb-2">
                 
                 <div class="col-3">
-                    <img src="../../public/img/start-here-gallery-image-05.jpg" alt="">
+                    <img src="/start-here-gallery-image-05.jpg" alt="">
                     <div class="descriptionGallery d-flex flex-column justify-content-center ">
                         <h3>
                             Lina Esthers
@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="col-3 px-2">
-                    <img src="../../public/img/start-here-gallery-image-06.jpg" alt="">
+                    <img src="/start-here-gallery-image-06.jpg" alt="">
                     <div class="descriptionGallery d-flex flex-column justify-content-center ">
                         <h3>
                             Lorean McPhils
@@ -97,7 +97,7 @@
                     </div>
                 </div>
                 <div class="col-2">
-                    <img src="../../public/img/start-here-gallery-image-07.jpg" alt="">
+                    <img src="/start-here-gallery-image-07.jpg" alt="">
                     <div class="descriptionGallery d-flex flex-column justify-content-center ">
                         <h3>
                             Anna Muray
@@ -113,8 +113,9 @@
 
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/variables.scss' as *;
-@use '../assets/scss/partials/reset.scss' as *;
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/reset.scss" as*;
+@use "../../assets/scss/partials/MySecondaryReset.scss" as*;
 .startWriting{
         background-color: #f8f8f8;
     }
@@ -128,11 +129,6 @@
         .row{
             div{
                 position: relative;
-                >img{
-                    &:hover{
-                        
-                    }
-                }
                 .descriptionGallery{
                     background-color: rgba($color: #000000, $alpha: 0.5);
                     width: 100%;

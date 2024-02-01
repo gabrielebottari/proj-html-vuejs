@@ -16,7 +16,7 @@
             <div class="container">
                 <ul class="d-flex ">
                     <li class="p-2">
-                        <a href="#">
+                        <a href="/">
                             Home
                         </a>
                     </li>
@@ -42,9 +42,9 @@
         <section>
             <div class="container">
                 <div class="mgBox">
-                    <img src="../../public/img/success-story-poster-image.jpg" alt="">
+                    <img src="/success-story-poster-image.jpg" alt="">
                     <div class="youtube ">
-                        <img src="../../public/img/icon-youtube-play.png" alt="youtube"> 
+                        <img src="/icon-youtube-play.png" alt="youtube"> 
                     </div>
                 </div>
                 
@@ -54,8 +54,9 @@
 
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/variables.scss' as *;
-@use '../assets/scss/partials/reset.scss' as *;
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/reset.scss" as*;
+@use "../../assets/scss/partials/MySecondaryReset.scss" as*;
 .mgBox{
         height: 700px;
         position: relative;

@@ -87,8 +87,9 @@
 
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/variables.scss' as *;
-@use '../assets/scss/partials/reset.scss' as *;
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/reset.scss" as*;
+@use "../../assets/scss/partials/MySecondaryReset.scss" as*;
 .method{
         height: 300px;
         

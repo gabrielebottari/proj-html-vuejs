@@ -5,7 +5,7 @@
                 Image:
                 [
                     {
-                        maxCoach:'../../public/img/dark-logo.png',
+                        maxCoach:'/dark-logo.png',
                         href:'#',
                     }
                 ],
@@ -101,7 +101,7 @@
                         [
                             {
                                 hLink: 'Start Here',
-                                href:'#'
+                                href:'/'
                             },
                             {
                                 hLink: 'Success Story ',
@@ -284,7 +284,7 @@
             <nav class="d-flex  align-items-center ">
                 <!-- primo blocco header -->
                 <div class="flex-grow-1">
-                    <img src="../../public/img/dark-logo.png" alt="#">
+                    <img src="/dark-logo.png" alt="#">
                 </div>
                 <!-- secondo blocco header -->
                 <div class="navbar">
@@ -317,7 +317,7 @@
                                     </a>
                                 </li>
                                 <div class="position-absolute imgPosition">
-                                    <img id="imgDropdown" src="../../public/img/homepages-mega-menu-image-alt.jpg" alt="#">
+                                    <img id="imgDropdown" src="/homepages-mega-menu-image-alt.jpg" alt="#">
                                 </div>
                             </ul>
                             
@@ -342,8 +342,9 @@
 </template>
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/variables.scss' as *;
-@use '..//assets/scss/partials/reset.scss' as *;
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/reset.scss" as*;
+@use "../../assets/scss/partials/MySecondaryReset.scss" as*;
     header{
         background-color: #ffffff;
         .container{
@@ -405,7 +406,7 @@
     background: #f5f5f5;
     height: 30px;
     width: 50px;
-    color: $hover;
+    color: $hoverGreen;
     opacity: 0;
     font-size: 10pt;
     -webkit-transition: all .55s ease;
@@ -420,7 +421,7 @@
     margin-left: -50px;
     }
     .container-4:hover button.icon:hover{
-        background: $hover;
+        background: $hoverGreen;
         color: #ffffff;
     }
     /////////////////////////////////////
@@ -440,7 +441,7 @@
         background-color: #f9f9f9;
         min-width: 240px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border-bottom:4px solid $hover ;
+        border-bottom:4px solid $hoverGreen;
     }
     
     .pippo{
@@ -452,7 +453,7 @@
         background-color: #f9f9f9;
         width: 1320px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border-bottom:4px solid $hover ;
+        border-bottom:4px solid $hoverGreen ;
         height: 420px;
 
     }
@@ -480,7 +481,7 @@
         min-width: 160px;
         background-color: #f9f9f9;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border-bottom:4px solid $hover ;
+        border-bottom:4px solid $hoverGreen ;
     }
     .dropdown:hover .dropdown-one, #link1:hover > .dropdown-two {
         display: block;
