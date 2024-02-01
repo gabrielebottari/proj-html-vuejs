@@ -279,7 +279,7 @@
 </script>
 
 <template>
-    <header class="sticky-top ">
+    <header class="">
         <div>
             <nav class="d-flex  align-items-center justify-content-around   ">
                 <!-- primo blocco header -->
@@ -352,6 +352,12 @@
 @use "../../assets/scss/partials/MySecondaryReset.scss" as*;
     header{
         background-color: #ffffff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 3;
         
             nav{
                 padding:25px 0;
