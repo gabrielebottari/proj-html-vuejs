@@ -8,6 +8,7 @@ import MainTestimonials from "../../src/components/partials/AppMainTestimonials.
 import MainTransform from "../../src/components/partials/AppMainTransform.vue";
 import MainBlogs from "../../src/components/partials/AppMainBlogs.vue";
 import MainNewsletter from "../../src/components/partials/AppMainNewsletter.vue";
+import HeaderHomePage from "../../src/components/partials/HeaderHomePage.vue"
 
 export default {
     data() {
@@ -24,8 +25,8 @@ export default {
     MainTestimonials,
     MainTransform,
     MainBlogs,
-    MainNewsletter
-
+    MainNewsletter,
+    HeaderHomePage,
   },
     methods: {
 
@@ -35,6 +36,7 @@ export default {
 
 <template>
     <main>
+        <HeaderHomePage></HeaderHomePage>
         <Jumbotron></Jumbotron>
         <MainEverything></MainEverything>
         <MainSatisfaction></MainSatisfaction>

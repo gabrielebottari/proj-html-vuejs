@@ -5,7 +5,7 @@
                 Image:
                 [
                     {
-                        maxCoach:'../../public/img/dark-logo.png',
+                        maxCoach:'/dark-logo.png',
                         href:'#',
                     }
                 ],
@@ -105,7 +105,7 @@
                             },
                             {
                                 hLink: 'Success Story ',
-                                href:'#'
+                                href:'/SuccessStory'
                             },
                             {
                                 hLink: 'About me',
@@ -292,7 +292,7 @@
                         <div>
                             <ul v-if="elem.scrollBarheader != 'Home'" class="dropdown-one">
                                 <li v-for="index in elem.dropDown" id="link1" class="dItem" >
-                                    <a href="#">
+                                    <a href="/SuccessStory">
                                         {{ index.hLink }}
                                     </a>
                                     <!--Inside Dropdown -->
@@ -313,7 +313,7 @@
                                     </a>
                                 </li>
                                 <div class="position-absolute imgPosition">
-                                    <img id="imgDropdown" src="../../public/img/homepages-mega-menu-image-alt.jpg" alt="#">
+                                    <img id="imgDropdown" src="/homepages-mega-menu-image-alt.jpg" alt="#">
                                 </div>
                             </ul>
                             
@@ -326,7 +326,7 @@
                 <!-- secondo blocco header -->
                 
                 <div class="imgHeader">
-                    <img src="../../public/img/dark-logo.png" alt="#">
+                    <img src="/dark-logo.png" alt="#">
                 </div>
                 <!-- terzo blocco header -->
                 <div class="d-flex align-items-center ">
@@ -347,8 +347,9 @@
 </template>
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/variables.scss' as *;
-@use '..//assets/scss/partials/reset.scss' as *;
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/reset.scss" as*;
+@use "../../assets/scss/partials/MySecondaryReset.scss" as*;
     header{
         background-color: #ffffff;
         
@@ -361,7 +362,7 @@
                         width: 160px;
                     }
                     i:hover{
-                        color:$hover,
+                        color:$hoverGreen,
                     }
                     
 
@@ -416,7 +417,7 @@
     background: #f5f5f5;
     height: 30px;
     width: 50px;
-    color: $hover;
+    color: $hoverGreen;
     opacity: 0;
     font-size: 10pt;
     -webkit-transition: all .55s ease;
@@ -431,7 +432,7 @@
     margin-left: -50px;
     }
     .container-4:hover button.icon:hover{
-        background: $hover;
+        background: $hoverGreen;
         color: #ffffff;
     }
     /////////////////////////////////////
@@ -451,7 +452,7 @@
         background-color: #f9f9f9;
         min-width: 240px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border-bottom:4px solid $hover ;
+        border-bottom:4px solid $hoverGreen ;
     }
     
     .pippo{
@@ -463,7 +464,7 @@
         background-color: #f9f9f9;
         width: 1407px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border-bottom:4px solid $hover ;
+        border-bottom:4px solid $hoverGreen ;
         height: 420px;
 
     }
@@ -491,7 +492,7 @@
         min-width: 160px;
         background-color: #f9f9f9;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border-bottom:4px solid $hover ;
+        border-bottom:4px solid $hoverGreen ;
     }
     .dropdown:hover .dropdown-one, #link1:hover > .dropdown-two {
         display: block;

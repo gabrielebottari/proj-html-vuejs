@@ -296,13 +296,13 @@
                         <div>
                             <ul v-if="elem.scrollBarheader != 'Home'" class="dropdown-one">
                                 <li v-for="index in elem.dropDown" id="link1" class="dItem" >
-                                    <a href="#">
+                                    <a href="/">
                                         {{ index.hLink }}
                                     </a>
                                     <!--Inside Dropdown -->
                                     <ul v-if="index.hLink == 'Single Layout'" class="dropdown-two">
                                         <li v-for="products in index.dropdownTwo" class="dItem" id="file" href="#">
-                                            <a href="">
+                                            <a href="/">
                                                 {{ products.product }}
                                             </a>
                                         </li>
